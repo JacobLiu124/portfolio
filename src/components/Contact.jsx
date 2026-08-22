@@ -21,8 +21,8 @@ export default function Contact() {
       <p className="eyebrow">Get in Touch!</p>
       <h2 className="section__title">Let's connect</h2>
       <p className="contact__blurb container-narrow">
-        I'm currently open to work opportunities or internships. If you have any questions or inquiries, 
-        feel free to reach out to me through any of the contact methods below. I look forward to connecting with you! 
+        I'm currently open to work or internship opportunities. I am always ready for new roles and challenges and I think I would be a great addition to your team. 
+        If you have any questions or inquiries, feel free to reach out to me through any of the contact methods below. I look forward to connecting with you!
       </p>
 
       <ul className="bubble-row">

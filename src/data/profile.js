@@ -6,7 +6,7 @@
 
 export const profile = {
   name: "Jacob Liu",
-  role: "Software engineering student at Macquarie University. Part time math tutor",
+  role: "Software engineering student at Macquarie University. Part time math tutor.",
   location: "Sydney, Australia",
 
   // Short intro shown in the hero. Keep it to 2–3 sentences.

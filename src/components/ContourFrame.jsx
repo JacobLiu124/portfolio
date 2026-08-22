@@ -29,7 +29,7 @@ export default function ContourFrame({ src, alt }) {
           <img src={asset(src)} alt={alt} loading="eager" onError={() => setFailed(true)} />
         ) : (
           <div className="contour-frame__placeholder" aria-hidden="true">
-            <span>Add your photo — see profile.js</span>
+            <span>If you're reading this: My headshot doesn't seem to be working. Check back later to see what I look like!</span>
           </div>
         )}
       </div>
