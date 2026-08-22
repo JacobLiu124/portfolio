@@ -8,6 +8,6 @@ import react from "@vitejs/plugin-react";
 // If you're deploying to a *user/org* page (a repo literally named
 // <username>.github.io), set base back to "/".
 export default defineConfig({
-  base: "/my-portfolio/",
+  base: "/portfolio/",
   plugins: [react()],
 });
