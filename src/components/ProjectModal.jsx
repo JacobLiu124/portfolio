@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { CloseIcon } from "./Icons.jsx";
+import { asset } from "../utils/asset.js";
 
 export default function ProjectModal({ project, onClose }) {
   const closeRef = useRef(null);
@@ -55,7 +56,7 @@ export default function ProjectModal({ project, onClose }) {
         <div className="modal__scroll">
           {project.screenshot && (
             <div className="modal__cover">
-              <img src={project.screenshot} alt={`Screenshot of ${project.title}`} />
+              <img src={asset(project.screenshot)} alt={`Screenshot of ${project.title}`} />
             </div>
           )}
 

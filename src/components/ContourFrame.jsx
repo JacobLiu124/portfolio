@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { asset } from "../utils/asset.js";
 
 // The signature element: an animated contour line that traces itself
 // around the portrait, in the same visual language as a segmentation
@@ -25,7 +26,7 @@ export default function ContourFrame({ src, alt }) {
       </svg>
       <div className="contour-frame__image">
         {showImage ? (
-          <img src={src} alt={alt} loading="eager" onError={() => setFailed(true)} />
+          <img src={asset(src)} alt={alt} loading="eager" onError={() => setFailed(true)} />
         ) : (
           <div className="contour-frame__placeholder" aria-hidden="true">
             <span>Add your photo — see profile.js</span>
