@@ -16,7 +16,7 @@ export const profile = {
 
   // Path relative to /public, e.g. "/headshot.jpg". Drop your image
   // into the public/ folder and point this at it.
-  photo: "public/headshot.jpg",
+  photo: "/headshot.jpg",
 
   links: {
     github: "https://github.com/JacobLiu124",

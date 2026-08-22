@@ -25,7 +25,7 @@ export const projects = [
     title: "Cove - Digital Wallet (Work in Progress)",
     summary: "A client-facing digital wallet application that allowers users to pay, request and split bills between their friends.",
     skills: ["React, Vite, Express, Nodejs, postgres, basiq, REST API"],
-    screenshot: "projects/covess.png",
+    screenshot: "/projects/covess.png",
     links: [
       // { label: "Repository", href: "https://github.com/you/project-one" },
       // { label: "Live demo", href: "https://project-one.example.com" },
@@ -59,10 +59,10 @@ export const projects = [
     title: "goFinance - Stock Market Analysis and Prediction Bot",
     summary: "A bot that analyses stock market data and predicts the future price of a stock using machine learning algorithms.",
     skills: ["XGboost, Python, Pandas, React, Vite"],
-    screenshot: "projects/stockbot.png",
+    screenshot: "/projects/stockbot.png",
     links: [
       // { label: "Repository", href: "https://github.com/you/project-one" },
-      // { label: "Live demo", href: "https://project-one.example.com" },
+      { label: "Live demo", href: "https://go-finance.streamlit.app/" },
     ],
     documentation: [
       {
