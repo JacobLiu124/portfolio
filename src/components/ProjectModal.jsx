@@ -106,6 +106,14 @@ export default function ProjectModal({ project, onClose }) {
                         ))}
                       </ul>
                     )}
+                    {block.image && (
+                      <figure className="modal__figure">
+                        <a href={asset(block.image)} target="_blank" rel="noreferrer">
+                          <img src={asset(block.image)} alt={block.alt || block.heading} loading="lazy" />
+                        </a>
+                        {block.caption && <figcaption>{block.caption}</figcaption>}
+                      </figure>
+                    )}
                   </div>
                 ))}
               </div>

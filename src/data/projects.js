@@ -21,69 +21,56 @@
 
 export const projects = [
   {
-    id: "1",
-    title: "Cove - Digital Wallet (Work in Progress)",
-    summary: "A client-facing digital wallet application that allowers users to pay, request and split bills between their friends.",
-    skills: ["React, Vite, Express, Nodejs, postgres, basiq, REST API"],
-    screenshot: "/projects/covess.png",
+    id: "pdac-medsam3",
+    title: "PDAC-MedSAM3: Pancreatic Tumour Segmentation",
+    summary:
+      "Research project at Macquarie University: fine-tuned Meta's SAM3 (from MedSAM3) to find and outline " +
+      "pancreatic ductal adenocarcinoma on CT scans fully automatically, using only a text prompt.",
+    skills: ["Python", "PyTorch", "SAM3", "LoRA", "Medical imaging", "Hugging Face"],
+    screenshot: null,
     links: [
-      // { label: "Repository", href: "https://github.com/you/project-one" },
-      // { label: "Live demo", href: "https://project-one.example.com" },
+      { label: "Repository", href: "https://github.com/JacobLiu124/PDAC-MedSAM3" },
     ],
     documentation: [
       {
-       heading: "Abstract",
-       body: "Cove was developed as a part of my contiuous professional development as a software engineer. The project was developed with the aim of learning and applying what I" +
-       "already know and what I still need to learn in the field of full-stack web application development.",
+        heading: "Overview",
+        body:
+          "Give the model a CT scan and it returns a 3D tumour mask, with no clicks or boxes needed. " +
+          "I trained LoRA layers on top of the frozen SAM3 base model using 77 patients from the Medical " +
+          "Segmentation Decathlon, and compared it against nnU-Net, the standard baseline for medical segmentation.",
       },
       {
-       heading: "Project Description",
-       body: "Cove serves as a client facing application for basiq.io. Basiq is is an application which allows users to connect to their financial institutions and manage their accounts. " +
-       "After connecting to their financial institutions, users can pay, request and split bills between their friends, using their chosen username." +
-       "The application is still currently under development and is not yet available for public use. This is due to the nature of financial applications, the security framework needed," +
-       "the legal requirements surrounding digital wallents and the layers of security features, like Multi-Factor Authentication, that need to be implemented before the application can be released to the public.",
-      },
-      {
-        heading: "Highlights",
+        heading: "Results",
         list: [
-          "Full-stack web application development using React, Vite, Express, Nodejs and Postgres.",
-          "Secured backend API endpoints using JWT authentication and authorization.",
-          "Password strength validation, encrypting using salt and bcrypt.",
+          "Found 81 of 83 tumours on scans from new hospitals it never saw in training (nnU-Net found 72).",
+          "Mean 3D Dice of 0.37 on those scans, close to nnU-Net's 0.39, and 0.43 on held-out scans from the training hospital.",
+          "Held up better at new hospitals: Dice dropped by 0.07 from the training hospital, against 0.16 for nnU-Net.",
+          "Fine-tuning raised Dice at the training hospital from 0.27 (MedSAM3 as released) to 0.43.",
+          "Main weakness: about 6 false spots per scan, because each slice is segmented without 3D context.",
         ],
       },
-    ],
-  },
-
-  {
-    id: "2",
-    title: "goFinance - Stock Market Analysis and Prediction Bot",
-    summary: "A bot that analyses stock market data and predicts the future price of a stock using machine learning algorithms.",
-    skills: ["XGboost, Python, Pandas, React, Vite"],
-    screenshot: "/projects/stockbot.png",
-    links: [
-      // { label: "Repository", href: "https://github.com/you/project-one" },
-      { label: "Live demo", href: "https://go-finance.streamlit.app/" },
-    ],
-    documentation: [
       {
-       heading: "Abstract",
-       body: "goFinance is a project that combined two of my intrests, the stock market and machine learning. Piquing my interest early 2026, investing my money for the future was at the forefront" +
-       " of my mind during my final years as a software engineer. Researching deep learning applications in radiology, I was inspired to apply the machine learning skills that I saw in my thesis "+ 
-       "to my personal intrests as well.",
+        heading: "Example predictions",
+        image: "/projects/pdac/side_by_side.png",
+        alt: "CT slices comparing the expert tumour outline with nnU-Net and fine-tuned SAM3 predictions for four patients",
+        caption:
+          "Expert outline (white), nnU-Net (blue) and fine-tuned SAM3 (orange) on four patients, " +
+          "including the case where each model does best against the other.",
       },
       {
-       heading: "Project Description",
-       body: "goFinance bot uses XGboost (extreme gradient boosting), a machine learning algorithm, to predict the future price of a stock based on historical data." +
-       "The bot uses the Yahoo Finance API to fetch historical stock data and then uses the XGboost algorithm to train a model on that data." + 
-       " Data is cached between sessions and updated regualarly to ensure accuracy. ",
+        heading: "Per-patient accuracy",
+        image: "/projects/pdac/dice_comparison.png",
+        alt: "Dot plot of per-patient Dice scores for nnU-Net and SAM3 on both test sets",
+        caption:
+          "Each dot is one patient. Black lines show the mean with a 95% bootstrap range.",
       },
       {
-        heading: "Highlights",
-        list: [
-          "Implementation of XGboost (extreme gradient boosting) for stock price prediction.",
-          "Data fetching and caching using Yahoo Finance API.",
-          "Confidence ratings on par with industry standards.",
-        ],
+        heading: "All models compared",
+        image: "/projects/pdac/all_models_dice_bars.png",
+        alt: "Bar charts of mean Dice for nnU-Net and three MedSAM3 variants on both test sets",
+        caption:
+          "nnU-Net against MedSAM3 before and after fine-tuning. The right panel shows how much each model " +
+          "drops when moved to new hospitals.",
       },
     ],
   },

@@ -11,8 +11,8 @@ export const profile = {
 
   // Short intro shown in the hero. Keep it to 2–3 sentences.
   blurb:
-    "Programmer who specialises in Java and Python. Currently researching, deep learning in foundational vision models." +
-    "With general knowldege on APIs, full-stackweb application development and agile software development.",
+    "I am a software engineer, currently researching deep learning in foundational vision models at Macquarie University. " + 
+    "With general knowledge on APIs, full-stack web application development and agile software methodologies. I am a quick learner and a team player, looking to contribute to an innovative team and grow my skills in the field of software engineering.",
 
   // Path relative to /public, e.g. "/headshot.jpg". Drop your image
   // into the public/ folder and point this at it.

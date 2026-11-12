@@ -391,7 +391,7 @@ button {
    ============================================================ */
 .projects__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.25rem;
 }
 
@@ -601,6 +601,24 @@ button {
   color: var(--ink-muted);
   font-size: 0.94rem;
   line-height: 1.7;
+}
+
+.modal__figure {
+  margin: 0.9rem 0 0;
+}
+
+.modal__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+
+.modal__figure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
 }
 
 .modal__docs-empty {
